@@ -1,0 +1,62 @@
+@import '../../styles/theme.scss';
+@import '../../styles/breakpoints.scss';
+
+.footer-section {
+  background: $general-blue;
+  color: $general-white;
+
+  & .row {
+    flex-wrap: nowrap;
+  }
+
+  &__list {
+    &-item {
+      font-size: 2rem;
+      margin-bottom: 2.4rem;
+
+      &:nth-of-type(1) {
+        font-weight: 500;
+        pointer-events: none;
+      }
+
+      &:nth-last-of-type(1) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__copyright {
+    font-size: 1.4rem;
+    margin-top: 6.4rem;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-tablet) {
+}
+
+@media only screen and (max-width: $breakpoint-mobile) {
+  .footer-section {
+    &__logo {
+      fill: $general-white;
+      max-width: 9.8rem;
+      max-height: 1.9rem;
+      margin: 0 auto 4rem auto;
+      display: block;
+    }
+
+    &__list {
+      &-item {
+        display: none;
+        &:nth-of-type(1) {
+          display: block;
+          pointer-events: all;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &__copyright {
+      margin-top: 3.2rem;
+    }
+  }
+}

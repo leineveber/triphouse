@@ -1,0 +1,61 @@
+@import '../../styles/theme.scss';
+@import '../../styles/breakpoints.scss';
+
+.swiper-slide {
+  .row__card {
+    width: unset;
+  }
+}
+
+.row__card {
+  width: calc(25% - 1.6rem);
+  &-image-wrapper {
+    margin-bottom: 2.4rem;
+    height: 296px;
+  }
+
+  &-link {
+    color: $accent-blue;
+    display: block;
+    margin-bottom: 2.4rem;
+  }
+
+  &-description {
+    color: $secondary-text;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-tablet) {
+  .row__card {
+    width: calc(50% - 1.6rem);
+    &-image {
+      &-wrapper {
+        margin-bottom: 1.2rem;
+      }
+    }
+
+    &-link {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-mobile) {
+  .row__card {
+    width: 100%;
+    margin-bottom: 2rem;
+
+    &:nth-last-of-type(1) {
+      margin-bottom: 0;
+    }
+    &-image {
+      &-wrapper {
+        margin-bottom: 0.8rem;
+      }
+    }
+
+    &-link {
+      margin-bottom: 0.4rem;
+    }
+  }
+}

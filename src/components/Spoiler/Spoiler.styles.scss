@@ -1,0 +1,17 @@
+.spoiler {
+  position: relative;
+
+  &__bar {
+    position: absolute;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+    visibility: hidden;
+    opacity: 0;
+
+    &--active {
+      transform: translateY(0);
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

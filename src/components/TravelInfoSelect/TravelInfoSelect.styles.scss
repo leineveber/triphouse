@@ -1,0 +1,29 @@
+@import '../../styles/theme.scss';
+
+.travel-info {
+  &__childrens {
+    margin-top: 2.8rem;
+    font-size: 1.2rem;
+  }
+
+  &__text {
+    margin-bottom: 1.2rem;
+  }
+
+  &__select {
+    border: 0.1rem solid $accent-blue;
+    margin-right: 0.2rem;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    display: block;
+
+    &-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &:nth-of-type(2n) {
+      margin-left: auto;
+    }
+  }
+}

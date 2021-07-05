@@ -1,0 +1,97 @@
+@import '../../styles/theme.scss';
+@import '../../styles/breakpoints.scss';
+
+.offers-section {
+  &__title {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 120%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10rem;
+      height: 0.4rem;
+      background: $accent-yellow;
+    }
+  }
+
+  & .row__card-image {
+    max-width: 10rem;
+    max-height: 10rem;
+
+    &-wrapper {
+      margin-bottom: 5rem;
+      height: unset;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  & .row__card-description {
+    color: $text-main;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-tablet) and (min-width: $breakpoint-mobile) {
+  .offers-section {
+    &__title {
+      &::after {
+        width: 7rem;
+      }
+    }
+
+    & .row__card {
+      width: 50%;
+      margin-bottom: 5rem;
+
+      &:nth-of-type(3) {
+        margin-bottom: 0;
+      }
+
+      &:nth-last-of-type(1) {
+        margin-bottom: 0;
+      }
+    }
+
+    & .row__card-image {
+      max-width: 8.5rem;
+      max-height: 8.5rem;
+    }
+
+    & .row__card-description {
+      text-align: center;
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-mobile) {
+  .offers-section {
+    &__title {
+      &::after {
+        display: none;
+      }
+    }
+
+    & .row__card {
+      width: 100%;
+      margin-bottom: 3rem;
+
+      &:nth-last-of-type(1) {
+        margin-bottom: 0;
+      }
+    }
+
+    & .row__card-image {
+      max-width: 7rem;
+      max-height: 7rem;
+    }
+
+    & .row__card-description {
+      text-align: center;
+    }
+  }
+}

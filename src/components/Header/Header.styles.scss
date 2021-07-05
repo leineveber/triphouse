@@ -1,0 +1,153 @@
+@import '../../styles/theme.scss';
+@import '../../styles/breakpoints.scss';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo {
+    fill: $accent-blue;
+    max-width: 20.5rem;
+    max-height: 4rem;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+
+    &-item {
+      margin-right: 2.4rem;
+
+      &:nth-child(2) {
+        margin-right: 4.8rem;
+      }
+
+      &:nth-last-child(1) {
+        margin-right: 0;
+      }
+
+      &--active {
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 120%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 100%;
+          height: 0.2rem;
+          background: $accent-yellow;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        &:hover::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__theme {
+    max-width: 3rem;
+    max-height: 3rem;
+  }
+
+  &__account {
+    max-width: 4rem;
+    max-height: 4rem;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-tablet) {
+  .header {
+    &__logo {
+      max-width: 14rem;
+      max-height: 3rem;
+    }
+
+    .burger {
+      display: flex;
+      flex-direction: column;
+
+      &__line {
+        width: 2.4rem;
+        height: 0.3rem;
+        background-color: $general-white;
+        margin-bottom: 0.2rem;
+
+        &:nth-last-of-type(1) {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &__theme {
+      max-width: 1.6rem;
+      max-height: 1.6rem;
+    }
+
+    &__account {
+      max-width: 2.4rem;
+      max-height: 2.4rem;
+    }
+
+    &__nav {
+      &-item {
+        margin-right: 1.4rem;
+        font-size: 1.8rem;
+
+        &:nth-child(2) {
+          margin-right: 2rem;
+        }
+
+        &--active {
+          display: none;
+        }
+      }
+    }
+
+    &__theme {
+      max-width: 2.5rem;
+      max-height: 2.5rem;
+    }
+
+    &__account {
+      max-width: 3rem;
+      max-height: 3rem;
+    }
+
+    & .spoiler__bar {
+      display: flex;
+      flex-direction: column;
+      top: 2rem;
+      left: -6rem;
+      text-align: right;
+    }
+
+    & .spoiler__item {
+      margin-right: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-mobile) {
+  .header {
+    &__logo {
+      max-width: 12.1rem;
+      max-height: 2.4rem;
+    }
+
+    &__nav {
+      &-item {
+        margin-right: 1.6rem;
+      }
+
+      &-burger {
+        display: block;
+      }
+    }
+  }
+}
